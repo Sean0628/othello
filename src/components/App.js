@@ -6,10 +6,9 @@ import {
 import AlertTemplate from 'react-alert-template-basic'
 import Board from './Board';
 import Header from './Header';
-import Alert from './Alert';
+import Label from './Label';
 
 const options = {
-  // you can also just use 'bottom center'
   position: positions.BOTTOM_CENTER,
   timeout: 5000,
 };
@@ -17,12 +16,11 @@ const options = {
 const App = () => {
   return (
     <AlertProvider
-      template={AlertTemplate}
-    {...options}
+      template={AlertTemplate} {...options}
     >
       <div className='container'>
         <Header />
-        <Alert />
+        <Label />
         <Board />
       </div>
     </AlertProvider>

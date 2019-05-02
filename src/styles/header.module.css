@@ -1,0 +1,8 @@
+.header_container {
+  margin: 10px;
+  display: flex;
+}
+
+.header_text {
+  margin-right: auto;
+}

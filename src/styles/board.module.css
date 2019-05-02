@@ -4,6 +4,6 @@
   width: 500px;
   height: 500px;
   background-color: #006600;
-  margin: 10px;
+  margin: 10px auto;
   outline: solid black;
 }

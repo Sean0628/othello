@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Alert extends Component {
+class Label extends Component {
 
   render() {
     const text = this.props.player ? 'White' : 'Black';
 
     return (
       <div>
-        <div className='alert alert-primary'>
-          {`It's ${text}'s turn.`}
+        <div className='alert alert-primary h4'>
+          <b>{`It's ${text}'s turn.`}</b>
         </div>
       </div>
     );
@@ -22,4 +22,4 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(mapStateToProps)(Alert);
+export default connect(mapStateToProps)(Label);
