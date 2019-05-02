@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 import {
   INIT_BOARD,
-  UPDATE_BOARD,
-  PLAYER2_TURN
+  UPDATE_BOARD
 } from '../actions/types';
 
 const initialBoard = () => {
@@ -26,8 +25,9 @@ const initialBoard = () => {
 
 const playerReducer = (state = { isPlayer1: true }, action) => {
   switch (action.type) {
-    case PLAYER2_TURN:
-      return { ...state, isPlayer1: false };
+    case UPDATE_BOARD:
+      const bool = action.payload.player ? false : true;
+      return { ...state, isPlayer1: bool };
     default:
       return state;
   }

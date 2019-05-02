@@ -64,5 +64,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {
-  flipPiece
+  flipPiece,
 })(Board);
