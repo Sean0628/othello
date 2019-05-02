@@ -21,10 +21,12 @@ class Board extends Component {
             pieceColor = null;
         };
 
-        const styleProps = bind(
-          styles.piece,
-          pieceColor
-        );
+        let gridColor;
+        if (grid === -1) {
+          gridColor = styles.edge;
+        } else {
+          gridColor = null;
+        }
 
         const params = {
           board: this.props.board,
@@ -33,13 +35,43 @@ class Board extends Component {
           q: index2
         }
 
+        const onClickHangling = () => {
+          if (grid === 0) {
+            return this.props.flipPiece(params);
+          } else {
+            return false;
+          }
+        }
+
+        const displayIndex = () => {
+          if (grid === -1) {
+            if (index1 === 0) {
+              return index2;
+            } else if (index2 === 0) {
+              return index1;
+            }
+          }
+        }
+
+        const pieceStyleProps = bind(
+          styles.piece,
+          pieceColor
+        );
+
+        const gridStyleProps = bind(
+          styles.grid,
+          gridColor
+        );
+
         return (
           <div
-            onClick={() => this.props.flipPiece(params)}
-            className={styles.grid}
+            onClick={onClickHangling}
+            className={gridStyleProps}
             key={`[${index1}][${index2}]`}
           >
-            <div className={styleProps} />
+            <div className={pieceStyleProps}>
+              {displayIndex()}
+            </div>
           </div>
         )
       });
