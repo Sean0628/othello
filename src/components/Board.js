@@ -39,8 +39,7 @@ class Board extends Component {
             className={styles.grid}
             key={`[${index1}][${index2}]`}
           >
-            <div className={styleProps}>
-            </div>
+            <div className={styleProps} />
           </div>
         )
       });
