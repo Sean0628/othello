@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import bind from 'classnames';
 import { useAlert } from 'react-alert';
 import styles from '../styles/grid.module.css';
-import { flipPiece } from '../actions';
+import {
+  flipPiece,
+  switchPlayer
+} from '../actions';
 
 const Grid = props  => {
 
@@ -11,7 +14,7 @@ const Grid = props  => {
     props.flipPiece(params);
     if (checkValidMove() === 0) {
       alert.show('No where to place. Skip your turn.');
-      props.switchPlaye(props.player);
+      props.switchPlayer(props.player);
     }
   }
 
@@ -141,5 +144,8 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, 
-  { flipPiece }
+  {
+    flipPiece,
+    switchPlayer
+  }
 )(Grid);
