@@ -9,6 +9,10 @@ const Grid = props  => {
 
   const flipPiece = params => {
     props.flipPiece(params);
+    if (checkValidMove() === 0) {
+      alert.show('No where to place. Skip your turn.');
+      props.switchPlaye(props.player);
+    }
   }
 
   const params = {
@@ -43,6 +47,25 @@ const Grid = props  => {
     if (countTurnOver(board, playerNum, p, q,  1,  1)) return 1;
     return 0;
   };
+
+  const checkValidMove = () => {
+    let i, j;
+
+    for (i = 1; i <= 8; i++) {
+      for (j = 1; j <= 8; j++) {
+
+        const updetedParams = {
+          board: props.board,
+          player: props.player,
+          p: i,
+          q: j
+        };
+
+        if (isValidMove(updetedParams)) return 1;
+      }
+    }
+    return 0;
+  }
 
   const alert = useAlert()
 
