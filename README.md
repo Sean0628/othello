@@ -13,7 +13,7 @@ This application is mainly developed with React and Redux.
 ![Othello DEMO](https://user-images.githubusercontent.com/35167423/57124260-0b2a9800-6dc0-11e9-8952-ffd999be89b2.gif)
 
 ### URL
-https://boiling-thicket-26871.herokuapp.com/
+https://aqueous-mesa-26312.herokuapp.com/
 
 ## More details
 https://sean0628.hatenablog.com/entry/2019/05/03/123225
