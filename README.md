@@ -1,7 +1,7 @@
 # Othello
 
 This is a strategy board game for two players.
-This application is mainly developed with React and Redux.
+This application is mainly developed with React Redux.
 
 - Additional libraries
   - [classnames](https://github.com/JedWatson/classnames)
